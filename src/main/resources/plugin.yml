@@ -1,0 +1,4 @@
+name: Tower
+version: '${project.version}'
+main: ch.tower.tower.Tower
+api-version: 1.18
