@@ -1,7 +1,6 @@
 package ch.tower.tower;
 
 import org.bukkit.plugin.java.JavaPlugin;
-import ch.tower.tower.Game.GameState;
 
 public final class Tower extends JavaPlugin {
     private static Tower INSTANCE;
@@ -11,9 +10,6 @@ public final class Tower extends JavaPlugin {
         // Plugin startup logic
         INSTANCE = this;
         game = new Game();
-        GameState state = game.getState();
-
-
     }
 
     @Override
