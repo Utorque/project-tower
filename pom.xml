@@ -66,6 +66,10 @@
             <id>sonatype</id>
             <url>https://oss.sonatype.org/content/groups/public/</url>
         </repository>
+        <repository>
+            <id>dev-mc</id>
+            <url>http://45.155.170.185:8081/nexus/content/repositories/dev-mc/</url>
+        </repository>
     </repositories>
 
     <dependencies>
@@ -73,6 +77,12 @@
             <groupId>io.papermc.paper</groupId>
             <artifactId>paper-api</artifactId>
             <version>1.18.1-R0.1-SNAPSHOT</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>ch.lucaa8</groupId>
+            <artifactId>SpigotApi</artifactId>
+            <version>1.0.7</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>

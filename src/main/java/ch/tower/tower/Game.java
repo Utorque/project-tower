@@ -25,6 +25,11 @@ public class Game {
         return state;
     }
 
+    public Game(){
+        Bukkit.createWorld(WorldCreator.name(SPAWN_MAP)); //load spawn at startup
+        reloadMap(); //load new tower map
+    }
+
     public boolean teleportToSpawn(Player p){
         World spawn = Bukkit.getWorld(SPAWN_MAP);
         if(spawn!=null){
@@ -38,7 +43,6 @@ public class Game {
         World current = Bukkit.getWorld(TOWER_MAP); //get the actual tower map where players just played
         File currentWorldFile = new File(Tower.get().getServer().getWorldContainer(), TOWER_MAP); //get the world's file
         File originalWorldFile = new File(Tower.get().getServer().getWorldContainer(), TOWER_MAP+"_Original"); //get the world's file
-        //orld original = Bukkit.getWorld(TOWER_MAP+"_Original"); //
 
         if(current != null){ //check if the map isn't null before trying to get players on it
             current.getPlayers().forEach(p->{
@@ -68,7 +72,5 @@ public class Game {
             w.setGameRule(GameRule.DO_WEATHER_CYCLE, false);
             w.setGameRule(GameRule.DO_MOB_SPAWNING, false);
         }
-
-
     }
 }
